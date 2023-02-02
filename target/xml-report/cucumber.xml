@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="74.31">
+<testcase classname="US1002 Kullanici amazon anasayfada birden fazla urun aratir" name="TC02 Kullanici urunleri aratip test edebilmeli" time="73.963">
+<system-out><![CDATA[Given kullanici amazon anasayfaya gider.....................................passed
+Then amazon arama kutusuna nutella yazip aratir.............................passed
+And arama sonuclarinin nutella icerdigini test eder.........................passed
+And sayfayi kapatir.........................................................passed
+Given kullanici amazon anasayfaya gider.....................................passed
+Then amazon arama kutusuna Java yazip aratir................................passed
+And arama sonuclarinin Java icerdigini test eder............................passed
+Then sayfayi kapatir........................................................passed
+Given kullanici amazon anasayfaya gider.....................................passed
+Then amazon arama kutusuna Samsung yazip aratir.............................passed
+And arama sonuclarinin Samsung icerdigini test eder.........................passed
+Then sayfayi kapatir........................................................passed
+]]></system-out>
+</testcase>
+</testsuite>

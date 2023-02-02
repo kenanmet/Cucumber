@@ -18,13 +18,39 @@ public class AmazonStepdefinitions {
 
     @Then("amazon arama kutusuna nutella yazip aratir")
     public void amazon_arama_kutusuna_nutella_yazip_aratir() {
+        amazonPage=new AmazonPage();
         amazonPage.amazonAramaKutusu.sendKeys("nutella" + Keys.ENTER);
     }
-
     @Then("arama sonuclarinin nutella icerdigini test eder")
     public void arama_sonuclarinin_nutella_icerdigini_test_eder() {
         String actualAramaSnoucu=amazonPage.aramaSonucuElementi.getText();
         String expectedKelime="nutella";
+
+        Assert.assertTrue(actualAramaSnoucu.contains(expectedKelime));
+    }
+
+    @Then("amazon arama kutusuna Java yazip aratir")
+    public void amazon_arama_kutusuna_java_yazip_aratir() {
+        amazonPage=new AmazonPage();
+        amazonPage.amazonAramaKutusu.sendKeys("java" + Keys.ENTER);
+    }
+    @Then("arama sonuclarinin Java icerdigini test eder")
+    public void arama_sonuclarinin_java_icerdigini_test_eder() {
+        String actualAramaSnoucu=amazonPage.aramaSonucuElementi.getText();
+        String expectedKelime="java";
+
+        Assert.assertTrue(actualAramaSnoucu.contains(expectedKelime));
+    }
+
+    @Then("amazon arama kutusuna Samsung yazip aratir")
+    public void amazon_arama_kutusuna_samsung_yazip_aratir() {
+        amazonPage=new AmazonPage();
+        amazonPage.amazonAramaKutusu.sendKeys("samsung" + Keys.ENTER);
+    }
+    @Then("arama sonuclarinin Samsung icerdigini test eder")
+    public void arama_sonuclarinin_samsung_icerdigini_test_eder() {
+        String actualAramaSnoucu=amazonPage.aramaSonucuElementi.getText();
+        String expectedKelime="samsung";
 
         Assert.assertTrue(actualAramaSnoucu.contains(expectedKelime));
     }
