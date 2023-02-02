@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
@@ -10,11 +11,11 @@ import utilities.Driver;
 
 public class AmazonStepdefinitions {
     AmazonPage amazonPage=new AmazonPage();
-
     @Given("kullanici amazon anasayfaya gider")
     public void kullanici_amazon_anasayfaya_gider() {
         Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
     }
+
 
     @Then("amazon arama kutusuna nutella yazip aratir")
     public void amazon_arama_kutusuna_nutella_yazip_aratir() {
@@ -58,5 +59,30 @@ public class AmazonStepdefinitions {
     @Then("sayfayi kapatir")
     public void sayfayi_kapatir() {
         Driver.closeDriver();
+    }
+
+    //--------------------------------------------------------------------------\\
+    @Then("amazon arama kutusuna {string} yazip aratir")
+    public void amazonAramaKutusunaYazipAratir(String aranacakKelime) {
+        amazonPage=new AmazonPage();
+        amazonPage.amazonAramaKutusu.sendKeys(aranacakKelime + Keys.ENTER);
+    }
+    @And("arama sonuclarinin {string} icerdigini test eder")
+    public void aramaSonuclarininIcerdiginiTestEder(String expectedKelime) {
+        String actualAramaSnoucu=amazonPage.aramaSonucuElementi.getText();
+
+        Assert.assertTrue(actualAramaSnoucu.contains(expectedKelime));
+    }
+
+    @Given("kullanici {string} anasayfaya gider")
+    public void kullaniciAnasayfayaGider(String istenenUrl) {
+        Driver.getDriver().get(ConfigReader.getProperty(istenenUrl));
+    }
+
+    @Then("url'de {string}oldugunu test eder")
+    public void urlDeOldugunuTestEder(String arananKelime) {
+        String actualUrl=Driver.getDriver().getCurrentUrl();
+
+        Assert.assertTrue(actualUrl.contains(arananKelime));
     }
 }
