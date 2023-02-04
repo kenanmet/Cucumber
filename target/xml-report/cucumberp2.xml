@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="250.201">
+<testcase classname="US1003 Kullanici parametre olarak girilen degerleri aratir" name="TC04 Kullanici parametreli method ile java aratir" time="130.552">
+<system-out><![CDATA[Given kullanici amazon anasayfaya gider.....................................passed
+Then amazon arama kutusuna "java" yazip aratir..............................passed
+And arama sonuclarinin "java" icerdigini test eder..........................passed
+And sayfayi kapatir.........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="US1005 Kullanici configuration.propertiesdeki datalari parametre olarak kullanir" name="TC06 Kullanici amazon sitesine gidisi test eder" time="34.827">
+<system-out><![CDATA[Given kullanici "amazonUrl" anasayfaya gider................................passed
+Then url'de "amazon"oldugunu test eder......................................passed
+And sayfayi kapatir.........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="US1005 Kullanici configuration.propertiesdeki datalari parametre olarak kullanir" name="TC07 Kullanici wisequarter sitesine gidisi test eder" time="39.545">
+<system-out><![CDATA[Given kullanici "wqUrl" anasayfaya gider....................................passed
+Then url'de "wisequarter"oldugunu test eder.................................passed
+And sayfayi kapatir.........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="US1005 Kullanici configuration.propertiesdeki datalari parametre olarak kullanir" name="TC08 Kullanici wisequarter sitesine gidisi test eder" time="44.693">
+<system-out><![CDATA[Given kullanici "walmartUrl" anasayfaya gider...............................passed
+Then url'de "walmart"oldugunu test eder.....................................passed
+And sayfayi kapatir.........................................................passed
+]]></system-out>
+</testcase>
+</testsuite>
