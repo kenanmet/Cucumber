@@ -37,4 +37,28 @@ public class QualitydemyStepdefinitions {
     public void girisYapilamadiginiTestEder() {
         Assert.assertTrue(qualitydemyPage.kullaniciEmailKutusu.isDisplayed());
     }
+
+    @And("mail kutusuna manuel olarak {string} yazar")
+    public void mailKutusunaManuelOlarakYazar(String username) {
+        qualitydemyPage.kullaniciEmailKutusu.sendKeys(username);
+    }
+
+    @And("password kutusuna manuel olarak {string} yazar")
+    public void passwordKutusunaManuelOlarakYazar(String password) {
+        qualitydemyPage.passwordKutusu.sendKeys(password);
+    }
+
+    @Then("kullanici cookieyi kabul eder")
+    public void kullaniciCookieyiKabulEder() {
+        qualitydemyPage.acceptCookie.click();
+    }
+
+    @And("{int} saniye bekler")
+    public void saniyeBekler(int saniye) {
+        try {
+            Thread.sleep(saniye*1000);
+        } catch (InterruptedException e) {
+        }
+    }
+
 }
